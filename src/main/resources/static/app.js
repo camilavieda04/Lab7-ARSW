@@ -38,7 +38,7 @@ var app = (function () {
             //stompClient.subscribe('/topic/TOPICXX', function (eventbody) {
             stompClient.subscribe("/topic/newpoint", function (eventbody) {
                 var theObject=JSON.parse(eventbody.body);
-                alert("x=" +theObject.x+ " Y=" + theObject.y);
+                addPointToCanvas(theObject);
             });
         });
 
